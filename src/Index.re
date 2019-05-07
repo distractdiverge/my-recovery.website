@@ -1,3 +1,7 @@
-ReactDOMRe.renderToElementWithId(<Component1 message="Hello! Click this text." />, "index1");
+module ExampleApp = {
+    let component = ReasonReact.statelessComponent(__MODULE__);
 
-ReactDOMRe.renderToElementWithId(<Component2 greeting="Hello!" />, "index2");
+    let make = _children => {...component, render: _self => <AppLayout />};
+};
+
+ReactDOMRe.renderToElementWithId(<ExampleApp />, "app");
